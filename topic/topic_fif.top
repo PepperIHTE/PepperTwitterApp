@@ -1,0 +1,13 @@
+topic: ~topic()
+language: fif
+
+u:(twiittaa) Mitä tahdot twiitata $record=1
+    u1:(*) $stop_record=1
+    
+u:([ota kuva] {kuva}) $take_picture=1 Kuva otettu ja se on liitetty twiittiin.
+
+u:(poista {kuva}) $cancel_picture=1 Kuva on poistettu twiitistä
+    
+u:(e:twitterpepper/confirmation) kyllä vai ei
+    u1:([kyllä joo toki]) $tweet=1
+    u1:([ei älä]) Selvä, twiitti poistettu $cancel=1

@@ -1,0 +1,13 @@
+topic: ~topic()
+language: enu
+
+u:(tweet) What would you like me to tweet? $record=1
+    u1:(*) $stop_record=1
+    
+u:(take {picture}) $take_picture=1 I took a picture. It is now added to the tweet.
+
+u:(remove {picture}) $cancel_picture=1 Picture is now removed fro your tweet
+    
+u:(e:twitterpepper/confirmation) yes or no
+    u1:([yes yeah sure yep]) $tweet=1
+    u1:([no nope]) Fine $cancel=1
